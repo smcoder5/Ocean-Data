@@ -4,3 +4,5 @@ statsmodels
 scikit-learn
 Pillow
 streamlit
+branca
+folium
