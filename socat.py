@@ -24,7 +24,7 @@ def folium_map(aa):
         color = cm.LinearColormap(colors=['yellow','orange','red'], index=[200,350,450])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
-            .CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
+            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
 
     elif(aa=='Temperature in Celcius'):
         df=p.read_csv("") 
@@ -39,7 +39,7 @@ def folium_map(aa):
         color = cm.LinearColormap(colors=['blue','red'], index=[10,450])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
-            .CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
+            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
 
     elif(aa=='Salinity in Seawater'):
         df=p.read_csv("") 
@@ -53,7 +53,7 @@ def folium_map(aa):
         color = cm.LinearColormap(colors=['purple','green','red'], index=[200,350,450])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
-            .CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
+            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
 
 if __name__=="__main__":
     s.set_page_config(page_title='Sea Water Dataset',layout='wide')
