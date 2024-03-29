@@ -12,7 +12,7 @@ def folium_map(aa):
     attr=('&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)')
     tiles='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
     
-    
+    s.write()
     
     if(aa == 'CO₂ in Seawater'):
         df=p.read_csv("SOCATCO2_0.csv")
@@ -25,10 +25,13 @@ def folium_map(aa):
             v3=s.selectbox("Please enter the type of data",ll)
         color = cm.LinearColormap(colors=['yellow','orange','red'], index=[200,350,450]) 
         if(v1<10):
+            s.write(str(v2)+"-"+"0"+str(v1))
             a=df[df.DATE.str.startswith(str(v2)+"-"+"0"+str(v1))]
-            
+            s.write(a.shape)
         else:
+            s.write(str(v2)+"-"+"0"+str(v1))
             a=df[df.DATE.str.startswith(str(v2)+"-"+str(v1))]
+            s.write(a.shape)
         a.reset_index(inplace=True,drop=True)   
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         
