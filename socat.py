@@ -19,7 +19,7 @@ def folium_map(aa):
         with cc[0]:
             v1=s.selectbox("Please Enter the Month",[i for i in range(1,13)])
         with cc[1]:
-            v2=s.selectbox("Please Enter the Year",[i for i in range(2024,1950,-1)]]) 
+            v2=s.selectbox("Please Enter the Year",[i for i in range(2024,1950,-1)]) 
         with cc[2]:
             v3=s.selectbox("Please enter the type of data",ll)
         color = cm.LinearColormap(colors=['yellow','orange','red'], index=[200,350,450]) 
