@@ -31,6 +31,7 @@ def folium_map(aa):
             a=df[df.DATE.str.startswith(str(v2)+"-"+str(v1))]
             
         a.reset_index(inplace=True,drop=True)   
+        s.write(a.shape)
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         
         for i in range(a.shape[0]):
