@@ -32,7 +32,7 @@ def folium_map(aa):
             
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
-            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(a[dd1[aa]+"_"+dd2[aa]][i]),popup=a[a[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
+            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[" "+dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(a[" "+dd1[aa]+"_"+dd2[aa]][i]),popup=a[" "+a[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
         st_data = st_folium(m)
     elif(aa=='Temperature in Celsius'):
         df=p.read_csv("SOCATCO2_1.csv") 
