@@ -39,7 +39,7 @@ def folium_map(aa):
             #s.write(dd1[aa]+"_"+dd2[v3])
             #s.write(a[dd1[aa]+"_"+dd2[v3]])
             s.write(a[dd1[aa]+"_"+dd2[v3]][i])
-            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(a[dd1[aa]+"_"+dd2[v3]][i]),popup=a[dd1[aa]+"_"+dd2[v3]][i][i], fill_opacity=1).add_to(m)
+            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(a[dd1[aa]+"_"+dd2[v3]][i]),popup=a[dd1[aa]+"_"+dd2[v3]][i], fill_opacity=1).add_to(m)
         st_data = st_folium(m)
     elif(aa=='Temperature in Celsius'):
         df=p.read_csv("SOCATCO2_1.csv") 
