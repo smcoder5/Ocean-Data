@@ -58,6 +58,6 @@ def folium_map(aa):
 if __name__=="__main__":
     s.set_page_config(page_title='Sea Water Dataset',layout='wide')
     s.title("  Surface Ocean CO₂ Atlas ")
-    aa=s.text_input("What kind of data you want?",['CO₂ in Seawater','Temperature in Celcius','Salinity in Seawater'])
+    aa=s.selectbox("What kind of data you want?",['CO₂ in Seawater','Temperature in Celcius','Salinity in Seawater'])
     
     
