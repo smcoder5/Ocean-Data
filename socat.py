@@ -26,7 +26,7 @@ def folium_map(aa):
         for i in range(df.shape[0]):
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
 
-    elif(aa=='Temperature in Celcius'):
+    elif(aa=='Temperature in Celsius'):
         df=p.read_csv("SOCATCO2_1.csv") 
         cc=s.columns(3)
         with cc[0]:
@@ -58,6 +58,6 @@ def folium_map(aa):
 if __name__=="__main__":
     s.set_page_config(page_title='Sea Water Dataset',layout='wide')
     s.title("  Surface Ocean CO₂ Atlas ")
-    aa=s.selectbox("What kind of data you want?",['CO₂ in Seawater','Temperature in Celcius','Salinity in Seawater'])
+    aa=s.selectbox("What kind of data you want?",['CO₂ in Seawater','Temperature in Celsius','Salinity in Seawater'])
     
     
