@@ -25,13 +25,12 @@ def folium_map(aa):
             v3=s.selectbox("Please enter the type of data",ll)
         color = cm.LinearColormap(colors=['yellow','orange','red'], index=[200,350,450]) 
         if(v1<10):
-            s.write(str(v2)+"-"+"0"+str(v1))
             a=df[df.DATE.str.startswith(str(v2)+"-"+"0"+str(v1))]
-            s.write(a.shape)
+          
         else:
-            s.write(str(v2)+"-"+"0"+str(v1))
+            
             a=df[df.DATE.str.startswith(str(v2)+"-"+str(v1))]
-            s.write(a.shape)
+            
         a.reset_index(inplace=True,drop=True)   
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         
@@ -40,7 +39,7 @@ def folium_map(aa):
             #s.write(a[dd1[aa]+"_"+dd2[v3]])
             s.write(a[dd1[aa]+"_"+dd2[v3]][i])
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(a[dd1[aa]+"_"+dd2[v3]][i]),popup=a[dd1[aa]+"_"+dd2[v3]][i], fill_opacity=1).add_to(m)
-        st_data = st_folium(m)
+        st_data = st_folium(m,width=1080)
     elif(aa=='Temperature in Celsius'):
         df=p.read_csv("SOCATCO2_1.csv") 
         cc=s.columns(3)
