@@ -6,7 +6,7 @@ import branca.colormap as cm
 
 def folium_map(aa):
     ll=['Count of Observations','Average Weighted','Average Unweighted','Minimum', 'Maximum']
-    dd1={"CO₂ in Seawater":" FCO2","Temperature in Celcius":" SST","Salinity in Seawater":" SALINITY"}
+    dd1={"CO₂ in Seawater":" FCO2","Temperature in Celsius":" SST","Salinity in Seawater":" SALINITY"}
     dd2={'Count of Observations':"COUNT_NOBS_YEAR",'Average Weighted':"AVE_WEIGHTED_YEAR",'Average Unweighted':"AVE_UNWTD_YEAR",'Minimum':"MIN_UNWTD_YEAR", 'Maximum':"MAX_UNWTD_YEAR"}
     
     attr=('&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)')
@@ -32,9 +32,9 @@ def folium_map(aa):
         a.reset_index(inplace=True,drop=True)   
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
-            s.write(" "+dd1[aa]+"_"+dd2[aa])
-            s.write(a[" "+dd1[aa]+"_"+dd2[aa]])
-            s.write(a[" "+dd1[aa]+"_"+dd2[aa]][i])
+            s.write(dd1[aa]+"_"+dd2[aa])
+            s.write(a[dd1[aa]+"_"+dd2[aa]])
+            s.write(a[dd1[aa]+"_"+dd2[aa]][i])
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[" "+dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(a[" "+dd1[aa]+"_"+dd2[aa]][i]),popup=a[" "+dd1[aa]+"_"+dd2[aa]][i][i], fill_opacity=1).add_to(m)
         st_data = st_folium(m)
     elif(aa=='Temperature in Celsius'):
