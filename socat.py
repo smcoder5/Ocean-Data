@@ -13,28 +13,28 @@ def folium_map(aa):
     
     
     if(aa == 'CO₂ in Seawater'):
-        df=p.read_csv("")
+        df=p.read_csv("SOCATCO2_0.csv")
         cc=s.columns(3)
         with cc[0]:
-            v1=s.text_input("Please Enter the Month",[i for i in range(1,13)])
+            v1=s.selectbox("Please Enter the Month",[i for i in range(1,13)])
         with cc[1]:
-            v2=s.text_input("Please Enter the Year",[i for i in range(1950,2024)]) 
+            v2=s.selectbox("Please Enter the Year",[i for i in range(1950,2024)]) 
         with cc[2]:
-            v3=s.text_input("Please enter the type of data",ll)
+            v3=s.selectbox("Please enter the type of data",ll)
         color = cm.LinearColormap(colors=['yellow','orange','red'], index=[200,350,450])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
 
     elif(aa=='Temperature in Celcius'):
-        df=p.read_csv("") 
+        df=p.read_csv("SOCATCO2_1.csv") 
         cc=s.columns(3)
         with cc[0]:
-            v1=s.text_input("Please Enter the Month",[i for i in range(1,13)])
+            v1=s.selectbox("Please Enter the Month",[i for i in range(1,13)])
         with cc[1]:
-            v2=s.text_input("Please Enter the Year",[i for i in range(1950,2024)]) 
+            v2=s.selectbox("Please Enter the Year",[i for i in range(1950,2024)]) 
         with cc[2]:
-            v3=s.text_input("Please enter the type of data",ll)
+            v3=s.selectbox("Please enter the type of data",ll)
 
         color = cm.LinearColormap(colors=['blue','red'], index=[10,450])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
@@ -42,14 +42,14 @@ def folium_map(aa):
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
 
     elif(aa=='Salinity in Seawater'):
-        df=p.read_csv("") 
+        df=p.read_csv("SOCATCO2_2.csv") 
         cc=s.columns(3)
         with cc[0]:
-            v1=s.text_input("Please Enter the Month",[i for i in range(1,13)])
+            v1=s.selectbox("Please Enter the Month",[i for i in range(1,13)])
         with cc[1]:
-            v2=s.text_input("Please Enter the Year",[i for i in range(1950,2024)]) 
+            v2=s.selectbox("Please Enter the Year",[i for i in range(1950,2024)]) 
         with cc[2]:
-            v3=s.text_input("Please enter the type of data",ll)
+            v3=s.selectbox("Please enter the type of data",ll)
         color = cm.LinearColormap(colors=['purple','green','red'], index=[200,350,450])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
