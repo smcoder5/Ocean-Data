@@ -11,7 +11,8 @@ def folium_map(aa):
     
     attr=('&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)')
     tiles='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
-
+    print(dd1[aa]+"_"+dd2[aa])
+    print(df[dd1[aa]+"_"+dd2[aa]][i])
     
     if(aa == 'CO₂ in Seawater'):
         df=p.read_csv("SOCATCO2_0.csv")
