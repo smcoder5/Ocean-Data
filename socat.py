@@ -53,7 +53,7 @@ def folium_map(aa):
         color = cm.LinearColormap(colors=['blue','red'], index=[10,40])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
-            folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[v3]][i]),popup=a[df[dd1[aa]+"_"+dd2[v3]][i], fill_opacity=1).add_to(m)
+            #folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[v3]][i]),popup=a[df[dd1[aa]+"_"+dd2[v3]][i], fill_opacity=1).add_to(m)
         st_data = st_folium(m,width=1750)
     elif(aa=='Salinity in Seawater'):
         df=p.read_csv("SOCATCO2_2.csv") 
