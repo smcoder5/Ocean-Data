@@ -11,8 +11,7 @@ def folium_map(aa):
     
     attr=('&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)')
     tiles='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
-    print(dd1[aa]+"_"+dd2[aa])
-    print(df[dd1[aa]+"_"+dd2[aa]][i])
+    
     
     if(aa == 'CO₂ in Seawater'):
         df=p.read_csv("SOCATCO2_0.csv")
@@ -37,7 +36,7 @@ def folium_map(aa):
         
         for i in range(a.shape[0]):
             #s.write(dd1[aa]+"_"+dd2[v3])
-            #s.write(a[dd1[aa]+"_"+dd2[v3]])
+            s.write(a[dd1[aa]+"_"+dd2[v3]])
             #s.write(a[dd1[aa]+"_"+dd2[v3]][i])
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(a[dd1[aa]+"_"+dd2[v3]][i]),popup=a[dd1[aa]+"_"+dd2[v3]][i], fill_opacity=1).add_to(m)
         st_data = st_folium(m,width=1750)
