@@ -50,7 +50,7 @@ def folium_map(aa):
         with cc[2]:
             v3=s.selectbox("Please enter the type of data",ll)
 
-        color = cm.LinearColormap(colors=['blue','red'], index=[10,450])
+        color = cm.LinearColormap(colors=['blue','red'], index=[10,40])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
@@ -64,7 +64,7 @@ def folium_map(aa):
             v2=s.selectbox("Please Enter the Year",[i for i in range(1950,2024)]) 
         with cc[2]:
             v3=s.selectbox("Please enter the type of data",ll)
-        color = cm.LinearColormap(colors=['purple','green','red'], index=[200,350,450])
+        color = cm.LinearColormap(colors=['purple','green','red'], index=[20,35,45])
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
         for i in range(df.shape[0]):
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(df[dd1[aa]+"_"+dd2[aa]][i]), fill_color =color(df[dd1[aa]+"_"+dd2[aa]][i]),popup=a[df[dd1[aa]+"_"+dd2[aa]][i]][i], fill_opacity=1).add_to(m)
