@@ -28,7 +28,7 @@ if __name__=="__main__":
     temp=s.slider("Enter the Temperature in Degree Celcius",5,45)
     salt=s.slider("Enter the Salinity in ‰",10,45)
     fug=s.slider("Eneter the fugaciy of CO₂ in micro-atmosphere presseure",100,1000)
-    dic=s.slider("Enter the value of Dissolved Inorganic Carbon in μM",1000,5000) 
+    dic=s.slider("Enter the value of Dissolved Inorganic Carbon in μM",1000,5000)*10**-6
 
     temp=273.15+temp
     co2=henry(temp,salt)*fug*10**-6
