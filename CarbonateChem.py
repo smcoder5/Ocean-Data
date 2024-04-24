@@ -33,13 +33,13 @@ if __name__=="__main__":
     temp=273.15+temp
     co2=henry(temp,salt)*fug*10**-6
     pH=pH(1-dic/co2,10**(-1*pK1(temp,salt)),10**(-1*pK1(temp,salt))*10**(-1*pK2(temp,salt)))
-    c=s.columns[2]
+    c=s.columns(2)
     with c[0]:
         c[0].metric("pK1",value=pK1(temp,salt))
     with c[1]:
         c[1].metric("pK2",value=pK2(temp,salt)) 
 
-    co=s.columns[3]
+    co=s.columns(3)
     with co[0]:
         co[0].metric("CO₂(aq)",value=co2)  
     with co[1]:
@@ -47,7 +47,7 @@ if __name__=="__main__":
     with col[2]:
         col[2].metric("",value=co3(pK1(temp,salt),pK2(temp,salt),co2,pH))
     del co
-    co=s.columns[2]
+    co=s.columns(2)
     with co[0]:
         co[0].metric("CO₂(aq)",value=hco3(pK1(temp,salt),co2,pH)+2*co3(pK1(temp,salt),pK2(temp,salt),co2,pH))  
     with co[1]:
