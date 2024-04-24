@@ -23,6 +23,55 @@ def co3(pK1,pK2,co2,pH):
 
 
 if __name__=="__main__":
+    s.markdown('''
+    <style>
+   .css-1r6slb0{
+   background-color: #f6f6eb
+   border-radius: 0px;
+   border: 3px solid #73AD21;
+   padding: 0% 1% 1% 1%;}
+
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    For Chart Background
+    .nsewdrag{
+    fill:#fff !important;
+    }
+
+    .css-18e3th9 {
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    }
+
+   div[data-testid="metric-container"] {
+   background-color: #f6f6eb
+   border-radius: 0px;
+   border: 3px solid #73AD21;
+   padding: 0.5% 0% 0% 0%;
+   color: rgb(30, 103, 119);
+   overflow-wrap: break-word;
+   justify-content: center;
+   font-size: large;
+    }
+
+    /*center metric label*/
+    [data-testid="stMetricLabel"]> div:nth-child(1) {
+    justify-content: center;
+    font-size: 15px;
+    }
+
+    /*center metric value*/
+    [data-testid="stMetricValue"] > div:nth-child(1) {
+    justify-content: center;
+    value-align: center;
+
+    font-size: 25px;    }
+
+    
+    ''', unsafe_allow_html=True,
+    )
     s.set_page_config(layout="wide") 
     s.title("")
     temp=s.slider("Enter the Temperature in Degree Celcius",5,45)
