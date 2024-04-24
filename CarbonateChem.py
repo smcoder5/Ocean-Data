@@ -44,7 +44,7 @@ if __name__=="__main__":
         co[0].metric("CO₂(aq)",value=co2)  
     with co[1]:
         co[1].metric("",value=hco3(pK1(temp,salt),co2,pH))
-    with col[2]:
+    with co[2]:
         col[2].metric("",value=co3(pK1(temp,salt),pK2(temp,salt),co2,pH))
     del co
     co=s.columns(2)
