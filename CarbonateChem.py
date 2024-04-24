@@ -72,7 +72,7 @@ if __name__=="__main__":
     
     ''', unsafe_allow_html=True,
     )
-    s.set_page_config(layout="wide") 
+    #s.set_page_config(layout="wide") 
     s.title("")
     temp=s.slider("Enter the Temperature in Degree Celcius",5,45)
     salt=s.slider("Enter the Salinity in ‰",10,45)
