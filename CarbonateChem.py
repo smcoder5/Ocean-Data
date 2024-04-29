@@ -26,7 +26,7 @@ if __name__=="__main__":
 
     s.set_page_config(layout="wide") 
 
-     s.markdown('''
+    s.markdown('''
 
     <style>
    .css-1r6slb0{
