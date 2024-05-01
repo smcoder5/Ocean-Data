@@ -87,22 +87,22 @@ if __name__=="__main__":
     pH=pH(1-dic/co2,10**(-1*pK1(temp,salt)),10**(-1*pK1(temp,salt))*10**(-1*pK2(temp,salt)))
     c=s.columns(2)
     with c[0]:
-        c[0].metric("pK1",value=pK1(temp,salt))
+        c[0].metric("pK1",value=round(pK1(temp,salt),2))
     with c[1]:
-        c[1].metric("pK2",value=pK2(temp,salt)) 
+        c[1].metric("pK2",value=round(pK2(temp,salt),2))
 
     co=s.columns(3)
     with co[0]:
-        co[0].metric("CO₂(aq)",value=co2)  
+        co[0].metric("CO₂(aq)",value=round(co2)*10**6)  
     with co[1]:
-        co[1].metric("",value=hco3(pK1(temp,salt),co2,pH))
+        co[1].metric("HCO₃⁻",value=round(hco3(pK1(temp,salt),co2,pH))*10**6)
     with co[2]:
-        co[2].metric("",value=co3(pK1(temp,salt),pK2(temp,salt),co2,pH))
+        co[2].metric("CO₃²⁻",value=round(co3(pK1(temp,salt),pK2(temp,salt),co2,pH))*10**6)
     del co
     co=s.columns(2)
     with co[0]:
-        co[0].metric("CO₂(aq)",value=hco3(pK1(temp,salt),co2,pH)+2*co3(pK1(temp,salt),pK2(temp,salt),co2,pH))  
+        co[0].metric("Carbonate Alkalinity",value=round(hco3(pK1(temp,salt),co2,pH)+2*co3(pK1(temp,salt),pK2(temp,salt),co2,pH))*10**6)  
     with co[1]:
-        co[1].metric("",value=pH)
+        co[1].metric("pH",value=round(pH,2))
     
     
