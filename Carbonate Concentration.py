@@ -1,5 +1,3 @@
-
-
 import streamlit as s
 import numpy as n
 import pandas as p
