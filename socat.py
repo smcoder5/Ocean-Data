@@ -66,6 +66,12 @@ def folium_map(aa):
             v2=s.selectbox("Please Enter the Year",[i for i in range(1950,2024)]) 
         with cc[2]:
             v3=s.selectbox("Please enter the type of data",ll) 
+        if(v1<10):
+            a=df[df.DATE.str.startswith(str(v2)+"-"+"0"+str(v1))]
+          
+        else:
+            
+            a=df[df.DATE.str.startswith(str(v2)+"-"+str(v1))]
         
         color = cm.LinearColormap(colors=['purple','green','red'], index=[20,35,45])
         
