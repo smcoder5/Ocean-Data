@@ -74,9 +74,9 @@ def folium_map(aa):
             a=df[df.DATE.str.startswith(str(v2)+"-"+str(v1))]
         
         color = cm.LinearColormap(colors=['purple','green','red'], index=[20,35,45])
-        
+        a.reset_index(inplace=True,drop=True) 
         m=folium.Map(tiles=tiles,attr=attr,min_lat=-90,max_lat=90,min_lon=-180,max_lon=180,max_bounds=True,zoom_start=3,max_zoom = 9,min_zoom = 2,location=[0,0])
-        for i in range(df.shape[0]):
+        for i in range(a.shape[0]):
             folium.CircleMarker(location=(a[' LAT'][i],a[' LON'][i]),radius=2.5, color=color(a[dd1[aa]+"_"+dd2[v3]][i]), fill_color =color(a[dd1[aa]+"_"+dd2[v3]][i]),tooltip=a[dd1[aa]+"_"+dd2[v3]][i], fill_opacity=1).add_to(m)
         st_data = st_folium(m,width=1750) 
     s.write(fl)
