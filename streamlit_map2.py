@@ -73,7 +73,7 @@ def main():
         s.session_state['kind'],s.session_state['type'],s.session_state['year'],s.session_state['month']='pK1','Average Weighted',2020,1 
         
 
-        #fol=r"C:\Users\shaleenr.USEREADYTECH\OneDrive - USEReady Technology Private Limited\Desktop\DataStore"
+        fol=""
         df=p.read_csv(os.path.join(fol,"SOCATCO2_0.csv"))[['DATE',' LAT',' LON',' FCO2_AVE_WEIGHTED_YEAR',' FCO2_AVE_UNWTD_YEAR']]
         df1=p.read_csv(os.path.join(fol,"SOCATCO2_1.csv"))[[' SST_AVE_WEIGHTED_YEAR',' SST_AVE_UNWTD_YEAR']]
         df2=p.read_csv(os.path.join(fol,"SOCATCO2_2.csv"))[[' SALINITY_AVE_WEIGHTED_YEAR',' SALINITY_AVE_UNWTD_YEAR']]
