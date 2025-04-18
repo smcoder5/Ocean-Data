@@ -82,10 +82,12 @@ def main():
         df= p.concat([df, df2], axis=1) 
         df=df[df[' SALINITY_AVE_WEIGHTED_YEAR']>0]
         df=df[df[' SALINITY_AVE_UNWTD_YEAR']>0]
+
+        s.table(df)
         df[' SST_AVE_WEIGHTED_YEAR'],df[' SST_AVE_UNWTD_YEAR']=df[' SST_AVE_WEIGHTED_YEAR']+273.15,df[' SST_AVE_UNWTD_YEAR']+273.15
         df['pK1_WEIGHTED'],df['pK1_UNWEIGHTED']=n.array(map(pK1,df[' SST_AVE_WEIGHTED_YEAR'],df[' SALINITY_AVE_WEIGHTED_YEAR'])),n.array(map(pK1,df[' SST_AVE_UNWTD_YEAR'],df[' SALINITY_AVE_UNWTD_YEAR']))
         df['pK2_WEIGHTED'],df['pK2_UNWEIGHTED']=n.array(map(pK2,df[' SST_AVE_WEIGHTED_YEAR'],df[' SALINITY_AVE_WEIGHTED_YEAR'])),n.array(map(pK2,df[' SST_AVE_UNWTD_YEAR'],df[' SALINITY_AVE_UNWTD_YEAR']))
-        s.table(df)
+        
         
         s.session_state['data']=df 
 
